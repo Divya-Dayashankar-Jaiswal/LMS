@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Signup Form Design</title> -->
+    <link rel="stylesheet" href="style_login.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  </head>
+  <body>
+  <header>
+  <div class="container">
+  <div class="header-right" id="myheader">
+          <h3><span class="logo">A</span>d<span class="logo">d</span>i<span class="logo">a</span>N</h3>
+        </div>
+		</div>
+		</header>
+    <div class="wrapper">
+      <div class="title">
+Sign-up Form</div>
+<form action="SignupServlet" method="post">
+		<div class="field2">
+			<select id="role" name="role">
+			<optgroup label="Role">
+				<option value="student">Student</option>
+				<option value="instructor">Instructor</option>
+				<option value="admin">Admin</option>
+				<option value="management">Management</option>
+			</optgroup>
+			</select>
+        </div>
+		<div class="field">
+          <input type="text" name="collegeid" required>
+          <label>College Id</label>
+        </div>
+        <div class="field">
+          <input type="text" name="fullname" required>
+          <label>Full Name</label>
+        </div>
+		<div class="field">
+          <input type="text" name="email" required>
+          <label>Email Address</label>
+        </div>
+		<div class="field">
+          <input type="password" id="password" name="password" required>
+		  <i class="fa fa-eye" id="togglePassword"></i>
+          <label>Password</label>
+        </div>
+		<div class="field">
+          <input type="password" id="confirmpassword" required>
+		  <i class="fa fa-eye" id="toggleconfirmPassword"></i>
+          <label>Confirm Password</label>
+        </div>
+		<script>
+		const togglePassword = document.querySelector('#togglePassword');
+		const password = document.querySelector('#password');
+
+		togglePassword.addEventListener('click', function (e) {
+			// toggle the type attribute
+			const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+			password.setAttribute('type', type);
+			// toggle the eye slash icon
+			this.classList.toggle('fa-eye-slash');
+		});
+		
+		const toggleconfirmPassword = document.querySelector('#toggleconfirmPassword');
+		const confirmpassword = document.querySelector('#confirmpassword');
+		
+		toggleconfirmPassword.addEventListener('click', function (e) {
+			// toggle the type attribute
+			const type2 = confirmpassword.getAttribute('type') === 'password' ? 'text' : 'password';
+			confirmpassword.setAttribute('type', type2);
+			// toggle the eye slash icon
+			this.classList.toggle('fa-eye-slash');
+		});
+</script>
+		<div class="field">
+          <input type="submit" value="Sign-up">
+        </div>
+		<div class="signup-link">
+		Already a member? <a href="index.html">Login now</a></div>
+</form>
+</div>
+</body>
+</html>
+

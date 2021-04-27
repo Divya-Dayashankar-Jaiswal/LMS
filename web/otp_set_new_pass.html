@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Set new password Form Design</title> -->
+    <link rel="stylesheet" href="style_login.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  </head>
+  <body>
+  <header>
+  <div class="container">
+  <div class="header-right" id="myheader">
+          <h3><span class="logo">A</span>d<span class="logo">d</span>i<span class="logo">a</span>N</h3>
+        </div>
+		</div>
+		</header>
+    <div class="wrapper">
+      <div class="title">
+Password Recovery</div>
+<form action="#">
+<div class="field">
+          <h6>If email-address entered by you is a registered. You would receive an OTP to your mail shortly. If not, kindly check your email-address again or if you're new use <a href="signup.html">sign-up</a> here.</h6>
+        </div>
+		<div class="field">
+          <input type="password" id="otp" name="otp_enter" required>
+		  <i class="fa fa-eye" id="toggleotp"></i>
+          <label>OTP</label>
+        </div>
+		<script>
+		const toggleotp = document.querySelector('#toggleotp');
+		const otp = document.querySelector('#otp');
+
+		toggleotp.addEventListener('click', function (e) {
+			// toggle the type attribute
+			const type = otp.getAttribute('type') === 'password' ? 'text' : 'password';
+			otp.setAttribute('type', type);
+			// toggle the eye slash icon
+			this.classList.toggle('fa-eye-slash');
+		});
+		</script>
+<div class="field">
+          <input type="submit" value="Proceed to change password">
+        </div>
+<div class="signup-link">
+Not a member?<a href="signup.html">Signup now</a></div>
+<div class="signup-link">
+Remember your password?<a href="index.html">Login now</a></div>
+</form>
+</div>
+</body>
+</html>

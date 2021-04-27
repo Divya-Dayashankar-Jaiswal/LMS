@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>User Profile Display</title> -->
+	<link rel="stylesheet" href="style_master1.css">
+	<link rel="stylesheet" href="style_demotodo.css">
+	<link rel="stylesheet" href="style_demoprofile.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  </head>
+  <body>
+<div class="page">
+  <header tabindex="0">
+  <div class="container">
+  <div class="header-right" id="myheader">
+          <h3><span class="logo">A</span>d<span class="logo">d</span>i<span class="logo">a</span>N</h3>
+        </div>
+		<div class="search">
+			<form>
+			  <input type="text" name="search" placeholder="Search..">
+			</form>
+		</div>
+		</div>
+		
+  </header>
+
+  <div id="nav-container">
+    <div class="bg"></div>
+    <div class="button" tabindex="0">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div id="nav-content" tabindex="0">
+      <dl>
+        <dt><a href="#0">Profile</a></dt>
+        <dt><a href="#0">Attendance</a></dt>
+        <dt><a href="#0">Scores</a></dt>
+        <dt><a href="#0">Exams Schedule</a></dt>
+      </dl>
+    </div>
+  </div>
+
+  <main>
+	<div class="row">
+		<div class="column left content">
+			<div class="card">
+  <i class="fa fa-user" style="width:100%; font-size:189px; color:red"><!-- profile pic--></i>
+  <h1></h1>
+  <!-- get  parameters from url to get info for profile -->
+  <p class="title"><!-- Role of User --></p>
+  <p><!-- University name --></p>
+  <div style="margin: 24px 0;"> 
+    <a href="#"><i class="fab fa-linkedin-in" style="color:#00008B"></i></a>  &nbsp; &nbsp;
+	<a href="#"><i class="fa fa-envelope" style="color:#FFD700"></i></a>
+  </div>
+  <p><!-- Class ID --></p>
+  <p><!-- Roll No --></p>
+  <p><!-- Class --></p>
+</div>
+		</div>
+		<div class="mytodo column right">
+			<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <!--<li>Hit the gym</li>
+  <li class="checked">Pay bills</li>
+  <li>Meet George</li>
+  <li>Buy eggs</li>
+  <li>Read a book</li>
+  <li>Organize office</li> -->
+</ul>
+
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+		</div>
+	</div>
+  
+  </main>
+	
+  
+  
+</div>
+</body>
+</html>
