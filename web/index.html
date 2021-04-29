@@ -21,12 +21,13 @@
 Login Form</div>
 <form action="LoginServlet" method = "post">
 			<div class="field2">
-			<select id="role" name="role">
+                            <select id="role" name="role" autofocus>
 			<optgroup label="Role">
-				<option value="student">Student</option>
-				<option value="instructor">Instructor</option>
-				<option value="admin">Admin</option>
-				<option value="management">Management</option>
+                                <option hidden disabled selected value> --Select an option -- </option>
+				<option value="Student">Student</option>
+				<option value="Instructor">Instructor</option>
+				<option value="Admin">Admin</option>
+				<option value="Management">Management</option>
 			</optgroup>
 			</select>
         </div>
